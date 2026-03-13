@@ -1,0 +1,24 @@
+
+MEMORIAS PRÁCTICA 1 PROGRAMACION II
+
+EJERCICIO 1
+
+El cual simule un ecosistema que contiene dos tipos de criaturas, osos y peces.
+
+El ecosistema consiste en un río, el cual puede ser simulado con un array relativamente largo.
+
+Cada elemento del array puede contener un objeto tipo oso, uno tipo pez o estar vacío.
+
+En cada paso de tiempo, basándose en un proceso aleatorio, cada animal intentará moverse a la localización adyacente en el array o permanecerá en su localización.
+
+Si dos animales del mismo tipo colisionan en la misma celda del array, entonces se quedan en sus posiciones, pero una nueva instancia de ese tipo de animal aparecerá en el array en una celda vacía aleatoria.
+
+Si un oso y un pez colisionan, el pez muere (se elimina del programa y del array).
+
+
+
+
+EJERCICIO 2
+En otro Proyecto, copiando el Proyecto anterior finalizado.
+
+Añade un atributo booleano que identifique el sexo del animal y otro atributo de tipo integer que sea la fuerza del animal. Si dos animales del mismo tipo colisionan, entonces solo se crea una nueva instancia si son de sexos diferentes, si son del mismo sexo solo sobrevive el que tenga mayor fuerza.
