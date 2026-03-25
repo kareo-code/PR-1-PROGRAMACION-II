@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36429.23 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OsosPeces_Ej1", "OsosPeces_Ej1\OsosPeces_Ej1.vcxproj", "{70B023A2-5811-4FFD-B2E2-77653175D772}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70B023A2-5811-4FFD-B2E2-77653175D772}.Debug|x64.ActiveCfg = Debug|x64
+		{70B023A2-5811-4FFD-B2E2-77653175D772}.Debug|x64.Build.0 = Debug|x64
+		{70B023A2-5811-4FFD-B2E2-77653175D772}.Debug|x86.ActiveCfg = Debug|Win32
+		{70B023A2-5811-4FFD-B2E2-77653175D772}.Debug|x86.Build.0 = Debug|Win32
+		{70B023A2-5811-4FFD-B2E2-77653175D772}.Release|x64.ActiveCfg = Release|x64
+		{70B023A2-5811-4FFD-B2E2-77653175D772}.Release|x64.Build.0 = Release|x64
+		{70B023A2-5811-4FFD-B2E2-77653175D772}.Release|x86.ActiveCfg = Release|Win32
+		{70B023A2-5811-4FFD-B2E2-77653175D772}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CA3214CD-068E-4859-B7CE-0F5DA53EB26D}
+	EndGlobalSection
+EndGlobal
