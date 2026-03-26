@@ -6,9 +6,19 @@ using namespace std;
 
 const int SIZE = 12; // al no indicarse en la practica se ha decidido que el array del rio sea un 12 x 12
 
+bool DEBUG = false; // activar/desactivar impresión detallada
+
+int globalID = 0; // contador global de animales
+
 // -------------------- CLASE BASE --------------------
 class Animal {
+protected:
+    int id;
+
 public:
+    Animal() { id = ++globalID; } // asigna ID único
+    int getID() { return id; }
+
     virtual char getSymbol() = 0; // símbolo del animal
     virtual ~Animal() {}
 };
@@ -85,6 +95,23 @@ public:
         cout << "+" << endl;
     }
 
+    // imprimir estado detallado
+    void imprimirDetalle() {
+        if (!DEBUG) return;
+
+        cout << "======== DEBUG ========" << endl;
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                if (grid[i][j] != NULL) {
+                    cout << grid[i][j]->getSymbol()
+                        << " ID:" << grid[i][j]->getID()
+                        << " Pos(" << i << "," << j << ")" << endl;
+                }
+            }
+        }
+        cout << "========================" << endl;
+    }
+
     // mover animales
     void mover() {
         Animal* nuevo[SIZE][SIZE];
@@ -154,6 +181,7 @@ int main() {
     for (int i = 0; i < 15; i++) { // al no especificar se ha decidido hacer 15 pasos de tiempo
         cout << "Paso " << i + 1 << endl;
         rio.imprimir();
+        rio.imprimirDetalle(); // <-- detalle opcional
         rio.mover();
     }
 
