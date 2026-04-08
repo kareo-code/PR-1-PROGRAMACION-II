@@ -1,0 +1,171 @@
+﻿#pragma once
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+const int SIZE = 12; // al no indicarse en la practica se ha decidido que el array del rio sea un 12 x 12
+
+bool DEBUG = false; // activar/desactivar impresión detallada
+
+int globalID = 0; // contador global de animales
+
+// -------------------- CLASE BASE --------------------
+class Animal {
+protected:
+    int id;
+
+public:
+    Animal() { id = ++globalID; } // asigna ID único
+    int getID() { return id; }
+
+    virtual char getSymbol() = 0; // símbolo del animal
+    virtual ~Animal() {}
+};
+
+// -------------------- CLASE OSO --------------------
+class Oso : public Animal {
+public:
+    char getSymbol() { return 'O'; } // se le establece al animal un símbolo
+};
+
+// -------------------- CLASE PEZ --------------------
+class Pez : public Animal {
+public:
+    char getSymbol() { return 'P'; } // se le establece al animal un símbolo
+};
+
+// -------------------- CLASE RIO --------------------
+class Rio {
+private:
+    Animal* grid[SIZE][SIZE];
+
+public:
+    Rio() {
+        for (int i = 0; i < SIZE; i++)
+            for (int j = 0; j < SIZE; j++)
+                grid[i][j] = NULL; //se llena el array entero de NULL
+    }
+
+    ~Rio() {
+        // destructor
+        for (int i = 0; i < SIZE; i++)
+            for (int j = 0; j < SIZE; j++)
+                delete grid[i][j];
+    }
+
+    // colocar animal en celda vacía aleatoria
+    void colocarAleatorio(Animal* a) {
+        int x, y;
+        do {
+            x = rand() % SIZE;
+            y = rand() % SIZE;
+        } while (grid[x][y] != NULL);
+        grid[x][y] = a;
+    }
+
+    // inicializar río con osos y peces
+    // al no especificar el número de osos y peces, se ha decidido, 10 osos y 20 peces
+    void inicializar() {
+        for (int i = 0; i < 10; i++)
+            colocarAleatorio(new Oso());
+        for (int i = 0; i < 20; i++)
+            colocarAleatorio(new Pez());
+    }
+
+    // imprimir el río en formato tabla
+    void imprimir() {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++)
+                cout << "+-";
+            cout << "+" << endl;
+
+            for (int j = 0; j < SIZE; j++) {
+                cout << "|";
+                if (grid[i][j] == NULL)
+                    cout << " ";
+                else
+                    cout << grid[i][j]->getSymbol();
+            }
+            cout << "|" << endl;
+        }
+
+        for (int j = 0; j < SIZE; j++)
+            cout << "+-";
+        cout << "+" << endl;
+    }
+
+    // imprimir estado detallado
+    void imprimirDetalle() {
+        if (!DEBUG) return;
+
+        cout << "======== DEBUG ========" << endl;
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                if (grid[i][j] != NULL) {
+                    cout << grid[i][j]->getSymbol()
+                        << " ID:" << grid[i][j]->getID()
+                        << " Pos(" << i << "," << j << ")" << endl;
+                }
+            }
+        }
+        cout << "========================" << endl;
+    }
+
+    // mover animales
+    void mover() {
+        Animal* nuevo[SIZE][SIZE];
+
+        // inicializar nuevo a NULL
+        for (int i = 0; i < SIZE; i++)
+            for (int j = 0; j < SIZE; j++)
+                nuevo[i][j] = NULL;
+
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                if (grid[i][j] == NULL) continue;
+
+                int dir = rand() % 5; // 0-arriba,1-abajo,2-izquierda,3-derecha,4-quedarse
+                int ni = i, nj = j;
+
+                // se comprueban los bordes antes de mover
+                if (dir == 0 && i > 0) ni--;
+                else if (dir == 1 && i < SIZE - 1) ni++;
+                else if (dir == 2 && j > 0) nj--;
+                else if (dir == 3 && j < SIZE - 1) nj++;
+
+                if (nuevo[ni][nj] == NULL) {
+                    nuevo[ni][nj] = grid[i][j];
+                }
+                else {
+                    char simbActual = grid[i][j]->getSymbol();
+                    char simbNuevo = nuevo[ni][nj]->getSymbol();
+
+                    if (simbActual == simbNuevo) {
+                        // misma especie → reproducirse
+                        if (simbActual == 'O') colocarAleatorio(new Oso());
+                        else colocarAleatorio(new Pez());
+
+                        // el animal original se queda en su posición si está vacía
+                        if (nuevo[i][j] == NULL)
+                            nuevo[i][j] = grid[i][j];
+                    }
+                    else {
+                        // oso vs pez
+                        if (simbActual == 'O') {
+                            delete nuevo[ni][nj]; // muere pez
+                            nuevo[ni][nj] = grid[i][j];
+                        }
+                        else {
+                            delete grid[i][j]; // muere pez
+                        }
+                    }
+                }
+            }
+        }
+
+        // copiar nuevo a grid
+        for (int i = 0; i < SIZE; i++)
+            for (int j = 0; j < SIZE; j++)
+                grid[i][j] = nuevo[i][j];
+    }
+};

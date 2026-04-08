@@ -125,6 +125,9 @@
   <ItemGroup>
     <ClCompile Include="OsosPeces_Ej1.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Animales.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
