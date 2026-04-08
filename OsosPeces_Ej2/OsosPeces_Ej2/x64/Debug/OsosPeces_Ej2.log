@@ -1,1 +1,3 @@
-﻿C:\Program Files\Microsoft Visual Studio\18\Community\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(473,5): error MSB8020: The build tools for Visual Studio 2022 (Platform Toolset = 'v143') cannot be found. To build using the v143 build tools, please install Visual Studio 2022 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".
+﻿  OsosPeces_Ej2.cpp
+C:\PR PROGRA II\PR-1-PROGRAMACION-II\OsosPeces_Ej2\OsosPeces_Ej2\OsosPeces_Ej2.cpp(6,15): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+  OsosPeces_Ej2.vcxproj -> C:\PR PROGRA II\PR-1-PROGRAMACION-II\OsosPeces_Ej2\x64\Debug\OsosPeces_Ej2.exe

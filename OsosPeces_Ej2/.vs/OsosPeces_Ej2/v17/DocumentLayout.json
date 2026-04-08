@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{FFE0408B-1AB4-4352-A32B-AF94E0541640}|OsosPeces_Ej2\\OsosPeces_Ej2.vcxproj|C:\\PR PROGRA II\\PR-1-PROGRAMACION-II\\OsosPeces_Ej2\\OsosPeces_Ej2\\OsosPeces_Ej2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{FFE0408B-1AB4-4352-A32B-AF94E0541640}|OsosPeces_Ej2\\OsosPeces_Ej2.vcxproj|solutionrelative:OsosPeces_Ej2\\OsosPeces_Ej2.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFE0408B-1AB4-4352-A32B-AF94E0541640}|OsosPeces_Ej2\\OsosPeces_Ej2.vcxproj|C:\\PR PROGRA II\\PR-1-PROGRAMACION-II\\OsosPeces_Ej2\\OsosPeces_Ej2\\Animales.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FFE0408B-1AB4-4352-A32B-AF94E0541640}|OsosPeces_Ej2\\OsosPeces_Ej2.vcxproj|solutionrelative:OsosPeces_Ej2\\Animales.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Animales.h",
+              "DocumentMoniker": "C:\\PR PROGRA II\\PR-1-PROGRAMACION-II\\OsosPeces_Ej2\\OsosPeces_Ej2\\Animales.h",
+              "RelativeDocumentMoniker": "OsosPeces_Ej2\\Animales.h",
+              "ToolTip": "C:\\PR PROGRA II\\PR-1-PROGRAMACION-II\\OsosPeces_Ej2\\OsosPeces_Ej2\\Animales.h",
+              "RelativeToolTip": "OsosPeces_Ej2\\Animales.h",
+              "ViewState": "AgIAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-08T18:00:14.279Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +41,7 @@
               "RelativeDocumentMoniker": "OsosPeces_Ej2\\OsosPeces_Ej2.cpp",
               "ToolTip": "C:\\PR PROGRA II\\PR-1-PROGRAMACION-II\\OsosPeces_Ej2\\OsosPeces_Ej2\\OsosPeces_Ej2.cpp",
               "RelativeToolTip": "OsosPeces_Ej2\\OsosPeces_Ej2.cpp",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAHIAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-26T19:24:08.697Z",
               "EditorCaption": ""

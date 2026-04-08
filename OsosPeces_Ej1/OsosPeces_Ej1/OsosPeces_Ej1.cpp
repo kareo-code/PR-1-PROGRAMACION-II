@@ -1,10 +1,6 @@
 
 #include "Animales.h"
 
-using namespace std;
-
-
-
 // -------------------- MAIN --------------------
 int main() {
     srand(time(NULL));

@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 
+using namespace std;
+
 const int SIZE = 12; // al no indicarse en la practica se ha decidido que el array del rio sea un 12 x 12
 
 bool DEBUG = false; // activar/desactivar impresión detallada
